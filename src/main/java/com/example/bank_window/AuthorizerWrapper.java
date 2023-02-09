@@ -1,0 +1,13 @@
+package com.example.bank_window;
+
+public abstract class AuthorizerWrapper implements LoanAuthorizer {
+    protected LoanAuthorizer auth;
+
+    protected AuthorizerWrapper(LoanAuthorizer auth) {
+        this.auth = auth;
+    }
+
+    public boolean authorizeLoan(int amt) {
+        return auth.authorizeLoan(amt);
+    }
+}
